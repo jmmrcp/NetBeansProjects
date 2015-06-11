@@ -78,6 +78,7 @@ public abstract class Employee implements Employed {
     }
 // … setters
 // All setters receive the correct parameters, check for valid values and throw the exception correctly
+// These access methods must check that only valid values are assigned; otherwise, an IllegalArgumentException with a descriptive message must be thrown.
 
     /**
      *
