@@ -29,8 +29,8 @@ public class Staff {
         HRAcme.employees[0] = new ManagementEmployee("Bill", 9);                                // Why more than ONE Class
         HRAcme.employees[1] = new EngineeringEmployee("Anna", 9);                               // There is not NEW attributes.
         HRAcme.employees[2] = new EngineeringEmployee("John", 5);
-        HRAcme.employees[3] = new EngineeringEmployee("Elizabeth", Contract.TRAINING, 3);
-        HRAcme.employees[4] = new EngineeringEmployee("Michael", Contract.TRAINING, 2);
+        HRAcme.employees[3] = new EngineeringEmployee("Elizabeth", Employee.Contract.TRAINING, 3);
+        HRAcme.employees[4] = new EngineeringEmployee("Michael", Employee.Contract.TRAINING, 2);
         HRAcme.employees[5] = new AdministrationEmployee("Albert");
 
 // ... print info

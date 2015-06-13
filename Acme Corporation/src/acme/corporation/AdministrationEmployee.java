@@ -23,7 +23,7 @@ public class AdministrationEmployee extends Employee {
 // ... constructor Minimal
     AdministrationEmployee(String name) {
 
-        super(name, Contract.TEMPORARY, 0, Department.ADMINISTRATION);
+        super(name, Employee.Contract.TEMPORARY, 0, Department.ADMINISTRATION);
     }
 // ... constructor Default
     AdministrationEmployee() {

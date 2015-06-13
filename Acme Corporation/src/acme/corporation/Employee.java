@@ -13,7 +13,37 @@ package acme.corporation;
 public abstract class Employee implements Employed {
 
 // ... contract types (constants) -> Not used Defining with ENUMs  
-    
+    public enum Contract {
+
+    /**
+     * Type Contract 0 Temporary
+     */
+    TEMPORARY("Temporary"),
+
+    /**
+     * Type Contract 1 Training
+     */
+    TRAINING("Training"),
+
+    /**
+     * Type Contract 2 Indefinite
+     */
+    INDEFINITE("Indefinite");
+
+    private String value;
+
+    private Contract(String value) {
+        this.value = value;
+    }
+/**
+ * 
+ * @return Contract type in lowercase.
+ */
+    @Override
+    public String toString() {
+        return this.value;
+    }
+}
     
 // ... attributes
 // All attributes are private and have the correct type.
@@ -21,7 +51,7 @@ public abstract class Employee implements Employed {
     private String name;
     Contract contract;          // Type ENUM -> Contract.java -> The three constants are correctly defined and used along the code.
     private int years;
-    Department department;      // Type ENUM -> Department.java -> The three constants are correctly defined and used along the code.
+    private Department department;      // Type ENUM -> Department.java -> The three constants are correctly defined and used along the code.
 
 // ... constructor Complete with all atributes.
 // The constructor receives the four values and initializes the attributes calling to the access methods.
