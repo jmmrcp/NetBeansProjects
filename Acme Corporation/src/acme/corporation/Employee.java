@@ -5,6 +5,8 @@
  */
 package acme.corporation;
 
+import java.util.IllegalFormatException;
+
 /**
  * Generic class for OBJECTs Employees
  *
@@ -116,7 +118,12 @@ public abstract class Employee implements Employed {
      * @param string with name of the employee
      */
     public void setName(String name) {
-        this.name = name;
+        try {
+            this.name = name;            
+        }
+        catch (IllegalFormatException e){
+            
+        }
     }
 
     /**
@@ -124,7 +131,12 @@ public abstract class Employee implements Employed {
      * @param contract for employee
      */
     public void setContract(Contract contract) {
-        this.contract = contract;
+        try {
+            this.contract = contract;            
+        }
+        catch (IllegalFormatException e) {
+            
+        }
     }
 
     /**
@@ -133,7 +145,12 @@ public abstract class Employee implements Employed {
      * @param int with years in company
      */
     public void setYears(int years) {
-        this.years = years;
+        try {
+            this.years = years;
+        }
+        catch (IllegalFormatException e) {
+            
+        }
     }
 
     /**
@@ -141,7 +158,13 @@ public abstract class Employee implements Employed {
      * @param department of employee
      */
     public void setDepartment(Department department) {
-        this.department = department;
+        try {
+            this.department = department;
+        }
+        catch (IllegalFormatException e) {
+            
+        }
+            
     }
 // ... getSalary method
 // getSalary is declared as abstract and so the Employee class is also abstract.

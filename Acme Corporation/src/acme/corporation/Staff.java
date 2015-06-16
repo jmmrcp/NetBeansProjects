@@ -32,7 +32,7 @@ public class Staff {
         HRAcme.employees[3] = new EngineeringEmployee("Elizabeth", Employee.Contract.TRAINING, 3);
         HRAcme.employees[4] = new EngineeringEmployee("Michael", Employee.Contract.TRAINING, 2);
         HRAcme.employees[5] = new AdministrationEmployee("Albert");
-
+        
 // ... print info
 // The staff info is displayed as described, using a loop to traverse the array
         HRAcme.HRPrint();
