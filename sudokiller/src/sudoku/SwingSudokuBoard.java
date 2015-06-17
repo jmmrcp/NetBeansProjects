@@ -4,8 +4,9 @@
  *******************************************************************************/
 package sudoku;
 
-import java.awt.*;
-import javax.swing.*;
+import java.awt.GridLayout;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 /**
  * This class represents a graphical Sudoku board.
@@ -55,6 +56,7 @@ public class SwingSudokuBoard extends SudokuBoard {
      * @param row Cell's row.
      * @param col Cell's column.
      */
+    @Override
     public void setCell(int num, int row, int col) {
         super.setCell(num, row, col);
         String text = (num == EMPTY) ? "" : String.valueOf(num);
@@ -67,6 +69,7 @@ public class SwingSudokuBoard extends SudokuBoard {
      * @param col Cell's column.
      * @return The number contained in the cell.
      */
+    @Override
     public int getCell(int row, int col) {
         int cell;
 

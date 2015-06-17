@@ -4,9 +4,19 @@
  *******************************************************************************/
 package sudoku;
 
-import java.awt.*;
-import java.awt.event.*;
-import javax.swing.*;
+import java.awt.Component;
+import java.awt.Container;
+import java.awt.EventQueue;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 
 /**
  * Graphical Sudoku game solver.
@@ -26,12 +36,16 @@ public class SwingSudoKiller extends SudoKiller {
         super(ssb);
         final JPanel panel = ssb.getPanel();
 
-        Runnable runner = new Runnable() {
+        Runnable runner;
+        runner = new Runnable() {
+            @Override
             public void run() {
                 final JFrame frame = new JFrame("Sudoku");
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
-                ActionListener al = new ActionListener() {
+                ActionListener al;
+                al = new ActionListener() {
+                    @Override
                     public void actionPerformed(ActionEvent ae) {
                         if (! guess(0, 0))
                             JOptionPane.showMessageDialog(frame, "Sin solucion!");
@@ -46,6 +60,8 @@ public class SwingSudoKiller extends SudoKiller {
                 addComponent(frame, b, 0, 1, 1, 1);
 
                 frame.setSize(240, 280);
+                frame.setResizable(false);
+                frame.setLocationRelativeTo(null);
                 frame.setVisible(true);
             }
         };
