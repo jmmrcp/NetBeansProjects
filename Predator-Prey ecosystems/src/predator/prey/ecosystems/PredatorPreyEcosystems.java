@@ -4,7 +4,7 @@
  http://ideone.com/s5Dhha
  */
 package predator.prey.ecosystems;
-
+        
 /**
  * Class to calculate The Lotka-Volterra model is defined by the following
  * formula: H[n+1] = H[n] + a1 * H[n] - a2*H[n]*L[n] = H[n] * (1 + a1 - a2 *
@@ -112,7 +112,7 @@ public class PredatorPreyEcosystems {
                 System.out.println("El Lince se extinguio entre el periodo " + (i - 1) + " y el " + i + ".");
                 System.out.println();
                 imp = true;
-                break; 
+                break;
             }
             // Increase i
             i++;
@@ -135,4 +135,9 @@ public class PredatorPreyEcosystems {
         System.out.format("L[%d] = %.3f lynxes%n", n, preyPred[1]);
         System.out.println("------------------------------------------");
     }
+    PredatorFrame v;
+    
+
+   
+   
 }
