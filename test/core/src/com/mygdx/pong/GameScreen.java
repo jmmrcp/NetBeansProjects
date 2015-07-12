@@ -17,7 +17,7 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 public class GameScreen extends AbstractScreen {
     private SpriteBatch batch;
     private Texture texture;
-    private float escala;
+    private Paddle palaIzquierda;
 
     public GameScreen(Main main) {
         super(main);
@@ -27,7 +27,8 @@ public class GameScreen extends AbstractScreen {
     public void show() {
         //super.show();
         batch = new SpriteBatch();
-        texture = new Texture(Gdx.files.internal("pongcampo.png"));   
+        texture = new Texture(Gdx.files.internal("pongcampo.png"));
+        palaIzquierda = new LeftPaddle(80, Gdx.graphics.getHeight()/2);
     }
 
     @Override
@@ -35,26 +36,17 @@ public class GameScreen extends AbstractScreen {
         //super.render(f);
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+        
+        palaIzquierda.update();
+        
         batch.begin();
-        batch.draw(texture, 0, 0, texture.getWidth() / escala, texture.getHeight() / escala);
+        batch.draw(texture, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+        palaIzquierda.draw(batch);
         batch.end();
     }
 
     @Override
     public void resize(int width, int height) {
-        // super.resize(i, i1); 
-        float widthImage = texture.getWidth();
-        float heightImage = texture.getHeight();
-        float r = heightImage / widthImage;
-        if (heightImage > height) {
-            heightImage = height;
-            widthImage = heightImage / r;
-        }
-        if (widthImage > width) {
-            widthImage = width;
-            heightImage = widthImage * r;
-        }
-        escala = width / widthImage;
     }
     
 }
